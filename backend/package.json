@@ -8,6 +8,9 @@
     "start": "index.js",
     "dev": "nodemon index.js"
   },
+   "engines": {
+    "node": ">=14 <15"
+  },
   "author": "raghavendra singh",
   "license": "ISC",
   "dependencies": {
