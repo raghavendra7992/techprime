@@ -1,37 +1,60 @@
-const express=require("express");
 const {User}=require("../model/usermodel");
 const bcrypt = require('bcrypt');
 const AsyncHandler = require("express-async-handler");
 
-const usersRoute=express.Router();
+// const signup=AsyncHandler(async(req,res)=>{
 
-const signup=AsyncHandler(async(req,res)=>{
+//     const {email,password}=req.body; 
+//     console.log(email,password)   
+//    try{
+//         let exist=await User.findOne({email:email});
+//         if(exist){
+//             res.send({msg:"user already registered please signin"});
+//         }
+//         else{
+//             bcrypt.hash(password, 10, async function(err, hash)
+//             {
+//                 if(err){
+//                     res.send(err);
+//                 }
+//                 else{
+//                     const user=new User({email,password:hash});
+//                     await user.save();
+//                     res.send({msg:"user registered successfully"});
+//                 }
+//             });
 
-    const {email,password}=req.body; 
-    console.log(email,password)   
-   try{
-        let exist=await User.findOne({email:email});
-        if(exist){
-            res.send({msg:"user already registered please signin"});
+
+//         }
+//     }
+//     catch(err){
+//         console.log(err);
+    // }
+// })
+const signup = AsyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+  console.log(email, password);
+  try {
+    let exist = await User.findOne({ email: email }).maxTimeMS(20000); // Increase timeout to 20 seconds
+
+    if (exist) {
+      res.send({ msg: "User already registered. Please sign in." });
+    } else {
+      bcrypt.hash(password, 10, async function (err, hash) {
+        if (err) {
+          res.send(err);
+        } else {
+          const user = new User({ email, password: hash });
+          await user.save();
+          res.send({ msg: "User registered successfully." });
         }
-        else{
-            bcrypt.hash(password, 10, async function(err, hash)
-            {
-                if(err){
-                    res.send(err);
-                }
-                else{
-                    const user=new User({email,password:hash});
-                    await user.save();
-                    res.send({msg:"user registered successfully"});
-                }
-            });
-        }
+      });
     }
-    catch(err){
-        console.log(err);
-    }
-})
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Internal server error.");
+  }
+});
 
 
 
