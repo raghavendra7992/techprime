@@ -8,7 +8,7 @@ import pjunactivelist from "../assigment-assest/Project-list.svg"
 import pjcreate from "../assigment-assest/create-project-active.svg"
 import unactivepjcreate from "../assigment-assest/create-project.svg"
 import lglogo from "../assigment-assest/Logout.svg"
-
+import "./dashboard.css"
 const Sidebar=({pathname})=>{
     const nav=useNavigate()
     const {logout}=useContext(Auth)
