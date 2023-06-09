@@ -55,32 +55,32 @@ const projectcount=asynchandler(async(req,res)=>{
       const day = today.getDate();
       const todayDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
     let count=await Project.find().count()
-    let closedcount=await Project.find({status:"Closed"}).count()
-    let runningcount=await Project.find({status:"Running"}).count()
-    let cancledcount=await Project.find({status:"Cancelled"}).count()
-    let clousercount=await Project.find({end_date:{$lt:todayDate}}).count()
+    let closecount=await Project.find({status:"Closed"}).count()
+    let running=await Project.find({status:"Running"}).count()
+    let cancelled=await Project.find({status:"Cancelled"}).count()
+    let clouser=await Project.find({end_date:{$lt:todayDate}}).count()
 
 
     
-    let strcount = await Project.find({department:"Statergy"}).count()
-    let strclosedcount = await Project.find({$and:[{department:"Statergy"},{status:"Closed"}]}).count()
-    let fincount = await Project.find({department:"Finance"}).count()
-    let finclosedcount = await Project.find({$and:[{department:"Finance"},{status:"Closed"}]}).count()
-    let qltcount = await Project.find({department:"Qaulity"}).count()
-    let qltclosedcount = await Project.find({$and:[{department:"Qaulity"},{status:"Closed"}]}).count()
-    let mancount = await Project.find({department:"Maintenance"}).count()
-    let manclosedcount = await Project.find({$and:[{department:"Maintenance"},{status:"Closed"}]}).count()
-    let stocount = await Project.find({department:"Stores"}).count()
-    let stoclosedcount = await Project.find({$and:[{department:"Stores"},{status:"Closed"}]}).count()
-    let hrcount = await Project.find({department:"HR"}).count()
-    let hrclosedcount = await Project.find({$and:[{department:"HR"},{status:"Closed"}]}).count()
-    res.send({count:count,closedcount:closedcount,runningcount:runningcount,cancledcount:cancledcount,
-      clousercount:clousercount,strcount:strcount,strclosedcount:strclosedcount,fincount:fincount,finclosedcount:finclosedcount,
-      qltcount:qltcount,qltclosedcount:qltclosedcount,mancount:mancount,manclosedcount:manclosedcount,stocount:stocount,
-      stoclosedcount:stoclosedcount,hrcount:hrcount,hrclosedcount:hrclosedcount
+    let strategy = await Project.find({department:"Statergy"}).count()
+    let strategyclose = await Project.find({$and:[{department:"Statergy"},{status:"Closed"}]}).count()
+    let finance = await Project.find({department:"Finance"}).count()
+    let financeclosed = await Project.find({$and:[{department:"Finance"},{status:"Closed"}]}).count()
+    let qaulity = await Project.find({department:"Qaulity"}).count()
+    let qaulityclose = await Project.find({$and:[{department:"Qaulity"},{status:"Closed"}]}).count()
+    let maintanance = await Project.find({department:"Maintenance"}).count()
+    let maintananceclose = await Project.find({$and:[{department:"Maintenance"},{status:"Closed"}]}).count()
+    let store = await Project.find({department:"Stores"}).count()
+    let storeclose = await Project.find({$and:[{department:"Stores"},{status:"Closed"}]}).count()
+    let hr = await Project.find({department:"HR"}).count()
+    let hrclose = await Project.find({$and:[{department:"HR"},{status:"Closed"}]}).count()
+    res.send({count:count,closecount:closecount,running:running,cancelled:cancelled,
+      clouser:clouser,strategy:strategy,strategyclose:strategyclose,finance:finance,financeclosed:financeclosed,
+      qaulity:qaulity,qaulityclose:qaulityclose,maintanance:maintanance,maintananceclose:maintananceclose,store:store,
+      storeclose:storeclose,hr:hr,hrclose:hrclose
     })
   }catch(err){
-    res.send({msg:"Error in finding count of data,try again"})
+    res.send({msg:"Data Is not found! or sumething missing please try again"})
   }
 })
 
