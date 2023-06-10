@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Chart,BarElement, CategoryScale, Legend, LinearScale, Tooltip } from "chart.js";
+import { Bar } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import Sidebar from "./sidebar";
 import Head from "./head";
@@ -40,9 +41,9 @@ const Dashboard=()=>{
     return (
         <>
         <div id="dp1">
-            <div id="dp2"></div>
+            <div id="dp2">
             <Sidebar pathname={window.location.pathname} />
-            <div id="dp3"><Head/></div>
+            <div id="dp3"><Head/>
             <div id="dpinfo">
                 <div className="dpi">
                     <div className="dpi1"></div>
@@ -82,8 +83,17 @@ const Dashboard=()=>{
 
             </div>
             <p id="tcs">Department Wise -Total vs Closed</p>
-            <div id=""></div>
+            <div id="chart">
+                <Bar data={data}
+                width={'250px'}></Bar>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="mobdp">
+
         </div>
         </>
     )
 }
+export default Dashboard

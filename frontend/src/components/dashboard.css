@@ -61,3 +61,279 @@
 #lg1 img{
     width: 100%;
 }
+
+/* Navbar and Footer */
+
+#nf{
+    width:100%;
+    border: 1px solid gray;
+    height: auto;
+    margin: auto;
+}
+#nav{
+    width: 100%;
+    height: auto;
+    
+    position: fixed;
+    z-index: 1;
+}
+#nav img{
+    width: 100%;
+}
+#nfimg{
+    margin-left: -7px;
+}
+#nfdiv{
+    width: 88%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 1;
+    top:-3px;
+    color: white;
+    left: 25px;
+}
+#nfdiv div:nth-child(1){
+    width: 70%;
+    text-align: left;
+}
+#nfdiv div:nth-child(2){
+    width: 30%;
+}
+#nfp{
+    font-size: 14px;
+    font-weight: 500;
+}
+#nflg img{
+    width: 25%;
+    margin-top: 10px;
+    
+}
+
+/* Footer */
+
+
+#f{
+    box-shadow: rgba(16, 30, 37, 0.12) 2px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius:30px 30px 0px 0px;
+    width: 99.6%;
+    height: 80px;
+    position: fixed;
+    z-index: 1;
+    clear:both;
+    bottom:0;
+    background-color: white;
+}
+
+#fc{
+    width: 100%;
+    border-radius:30px 30px 0px 0px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+.fdiv{
+    margin: auto;
+}
+
+
+
+/* Login css */
+
+
+#login_page{
+    width: 100%;
+    background-color: black;
+}
+
+#login_div{
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    
+    
+}
+
+#banner_img{
+    width: 100%;
+    display: block;
+}
+#banner_img_small{
+    display: none;
+}
+#login{
+   
+    width: 23%;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 30px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    left: 37%;
+    top:30%;
+    background-color: white;
+}
+#logo_img1{
+    position: absolute;
+    z-index: 1;
+    left: 44%;
+    top:10%;
+    color: rgb(225, 228, 231);
+}
+
+@media only screen and (max-width: 1287px){
+    #logo_img1{
+        left: 43%;
+    }
+}
+
+#extra_div{
+    width:90%;
+    height: 300px;
+    background-color: white;
+    margin: auto;
+}
+#extra_div p{
+    color: rgb(243, 76, 76);
+    position: absolute;
+    z-index: 1;
+    font-size: 14px;
+    left: 46%;
+    top:93%;
+    font-weight: 500;
+}
+
+form {
+    width: 100%;
+    display: grid;
+}
+.label{
+color: rgb(156, 164, 171);
+font-size: 14px;
+text-align: left;
+}
+.input{
+    width: 95%;
+    padding: 15px 2px 15px 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(156, 164, 171);
+    color: rgb(87, 92, 96);
+    outline: none;
+    font-size: 16px;
+}
+#password_div{
+    width: 98%;
+    display: flex;
+    border: 2px solid rgb(156, 164, 171);
+    border-radius: 5px;  
+}
+#forgot{
+    color: #2e65c2;
+    font-weight: 500;
+    margin-bottom: -20px;
+    text-align: right;
+    margin-right: 5px;
+    font-size: 12px;
+}
+.pass{
+    width: 85%;
+    border: none;
+    padding: 15px 2px 15px 10px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(87, 92, 96);
+}
+#password_div img{
+    width: 7%;
+    margin: auto;
+}
+#login_title{
+    font-size: 20px;
+    font-weight: 490;
+    color: rgb(87, 92, 96);
+}
+#submit{
+    font-size: 14px;
+    width: 40%;
+    height: 35px;
+    border-radius: 30px;
+    border: 1px solid #2e65c2;
+    color: white;
+    background-color: #2e65c2;
+}
+.err{
+    color:rgb(243, 76, 76); 
+    text-align: left;
+}
+.err1{
+    color:rgb(243, 76, 76); 
+    text-align: left;
+    margin-left: 18px;
+    font-size: 14px;
+    font-weight: 500;
+}
+#invalid{
+    color:rgb(243, 76, 76) ;
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #login_page{
+        background-color: white;
+    }
+    #login_div{
+        width: 100%;
+    }
+    #logo_img1{
+        left: 25%;
+        top:12%;
+    }
+    #login_title{
+        margin-left: 18px;
+    }
+    #logo_img1 img{
+        width: 60%;
+    }
+    #logo_img1 p{
+        font-size: 17px;
+    }
+    #login{
+        width: 85%;
+        position: static;
+        box-shadow:none;
+        padding: none;
+        margin-bottom: 40px;
+    }
+    #login_title{
+        font-size: 18px;
+        text-align: left;
+    }
+    #extra_div{
+        display: none;
+    }
+    #extra_div p{
+        display: none;
+    }
+    #invalid{
+        display: block;
+    }
+    #banner_img{
+        display: none;
+    }
+    #banner_img_small{
+        width: 100%;
+        display: block;
+        height: 380px;
+        margin-bottom: 1px;
+    }
+    #submit{
+        width: 95%;
+        font-size: 16px;
+    }
+  }
+
+  /* end login css */

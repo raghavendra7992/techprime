@@ -12,7 +12,3 @@ export default function Head() {
     </div>
   )
 }
-// header_container
-// header_img
-// header_p
-// logo_img
