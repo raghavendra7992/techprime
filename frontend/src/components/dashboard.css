@@ -337,3 +337,15 @@ text-align: left;
   }
 
   /* end login css */
+
+  #logoimg{
+    width: 65px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top:5%;
+    color: rgb(225, 228, 231);
+}
+#logoimg img{
+    width: 100%;
+}
